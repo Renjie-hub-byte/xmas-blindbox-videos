@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-mkdir -p out
+mkdir -p out/videos/targets out/videos/candidates
 ok=0; fail=0
 dl() {
   url="$1"; path="$2"
