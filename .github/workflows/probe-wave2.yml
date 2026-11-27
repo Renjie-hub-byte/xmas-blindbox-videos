@@ -1,0 +1,19 @@
+name: probe-wave2
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe URLs
+        run: |
+          for u in \
+            "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112400/5ad8e1e3-cc47-47f0-b4b5-76a6667f698e_1960539_invisible.mp4" \
+            "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112401/86e4031f-bf5b-4804-900c-815cddd520a5_1960898_invisible.mp4" \
+            "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112502/32dc8317-e7f0-444b-b8ff-61c3ea6971f4_1976010_invisible.mp4" \
+            "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112605/e8bc9e1c-516a-40a3-8f47-7cda507db5ae_1994040_invisible.mp4" \
+            "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112714/9f25eac1-4250-4542-83be-45e00fe219bd_2009888_invisible.mp4" \
+          ; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 -r 0-1023 "$u")
+            len=$(curl -sS -I --max-time 30 "$u" | awk -F': ' 'tolower($1)=="content-length"{gsub("\r","");print $2}')
+            echo "$code $len $u"
+          done
