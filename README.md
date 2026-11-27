@@ -1,13 +1,13 @@
 # 圣诞盲盒标注视频包
 
-22 个 case 的视频素材，共 50 个不重复文件：
+22 个完整 case + 1 个残缺 case（只有目标成片），共 51 个不重复文件：
 
-| 类型 | 数量 | 说明 |
+| 目录 | 数量 | 说明 |
 |---|---|---|
-| `videos/targets/` | 22 | 每个 case 的目标成片（带 invisible watermark） |
+| `videos/targets/` | 23 | 每个 case 的目标成片（带 invisible watermark） |
 | `videos/candidates/` | 28 | A/B 组源视频候选，按 `组_id_版本_性别` 命名 |
 
-- `manifest.csv`：22 个 case 与各自 1 个 target + 4 个候选视频的对应关系（A_v1 / A_v2 / B_v1 / B_v2）
+- `manifest.csv`：case 与各自 target + 4 个候选视频的对应关系（A_v1 / A_v2 / B_v1 / B_v2）
 - `videos.csv`：每个文件的原下载地址、场景名等元数据
 
 ## 下载
