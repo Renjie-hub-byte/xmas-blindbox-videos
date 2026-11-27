@@ -43,3 +43,17 @@ videos/candidates/A_a07_v1_female.mov
 manifest.csv
 videos.csv
 ```
+
+## 第二波训练集（v2）
+
+430 行 Excel，407 个视频，4.1GB，按 GitHub 2GB/文件限制切成 3 个分卷：
+
+```bash
+curl -sL -H "Accept: application/vnd.github.raw" \
+  https://api.github.com/repos/Renjie-hub-byte/xmas-blindbox-videos/contents/wave2/fetch.py \
+  | python3 -
+cd wave2 && for z in wave2_part*.zip; do unzip -o "$z"; done
+```
+
+目录按 `videos/{H3,Kling4.0}/{internal,external}/rNNN_tpl_xxx.mp4` 组织，`rNNN` 是 Excel 行号。
+详细说明见 [wave2/README.md](wave2/README.md)。
