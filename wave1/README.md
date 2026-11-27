@@ -10,6 +10,7 @@
 | 目标成片（target） | 178 |
 | 源视频候选（A/B 组去重后） | 40 |
 | 其中也出现在第二波 Excel 的 case | 40（视频 URL 完全一致，`manifest.csv` 的 `excel_row` 列标了行号） |
+| 覆盖礼物 | 82 / 100（礼物大类 10 个全覆盖） |
 
 ## 目录
 
@@ -27,6 +28,9 @@ source_page.html
 - `idx` 是标注页里的 case 序号（000–177），和 `manifest.csv`、页面顺序一致
 - `manifest.csv` 每个 case 一行：`gift_id / gift_name / model / pick_a / pick_b / pick_c`、目标成片路径、4 个候选路径（`cand_A_v1 / A_v2 / B_v1 / B_v2`）、所在分卷、以及第二波 Excel 对应行号
 - `candidates.csv` 候选视频的原地址与分组（A/B、id、v1/v2、性别）
+- 礼物分类（大类 / 普通款·隐藏款 / 品牌英文名）见同 release 的 `gifts.csv`，按 `gift_id` join
+- 场景中英文名见同 release 的 `scenes.csv`，按 `A_a05_v1` 这样的 key join
+- release 里还有 `wave1_manifest_enriched.csv`，已把上面两表的列并进 manifest
 
 ## 下载
 
