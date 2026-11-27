@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -u
+mkdir -p out
+ok=0; fail=0
+dl() {
+  url="$1"; path="$2"
+  if curl -fSL --retry 5 --retry-delay 3 --connect-timeout 20 --max-time 600 -o "$path" "$url"; then
+    echo "OK $path"; ok=$((ok+1)); return 0
+  fi
+  echo "FAIL $path $url"; return 1
+}
+dl2() {
+  url="$1"; fb="$2"; path="$3"
+  if dl "$url" "$path"; then return 0; fi
+  if [ -n "$fb" ] && [ "$fb" != "$url" ]; then dl "$fb" "$path" && return 0; fi
+  fail=$((fail+1)); return 1
+}
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/33750f39-32ce-413c-a3e4-4ebd80f9ac46_1930882_invisible.mp4" "" "out/videos/targets/00_B07-C10.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/65ad7ab96486b8f150b06903991a05bc.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a07_v1.mp4" "out/videos/candidates/A_a07_v1_female.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/9b5a3706c23e9a7edf92d171647ab42c.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a07_v2.mp4" "out/videos/candidates/A_a07_v2_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/7f1814bc857992f78b02022410a5bbc7.mov" "https://huibo-data.cdn.bcebos.com/upload/7f1814bc857992f78b02022410a5bbc7.mov" "out/videos/candidates/B_b07_v1_female.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/006c45468f7502c6c9ddda5876a31f30.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b07_v2.mp4" "out/videos/candidates/B_b07_v2_male.mov" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/370fd7bb-fde6-4bed-94a1-2ff0c7c86fa4_1930883_invisible.mp4" "" "out/videos/targets/01_B07-C03.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/99c71fc21372514d96951770c52dcbac.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a03_v1.mp4" "out/videos/candidates/A_a03_v1_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/623e804f19cbf5f9cca7646f6048c507.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a03_v2.mp4" "out/videos/candidates/A_a03_v2_male.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/0c145b1b-0ada-4eb0-bf87-60f620eec323_1930889_invisible.mp4" "" "out/videos/targets/02_B08-C09.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/8c4002523c2c24d64ff123da22a4769b.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a05_v1.mp4" "out/videos/candidates/A_a05_v1_male.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/8c6a3a7e401ed3da8bbc003371f38bc8.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a05_v2.mp4" "out/videos/candidates/A_a05_v2_female.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/8f3b9dba5485fef5deffa4154c13abc6.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b08_v1.mp4" "out/videos/candidates/B_b08_v1_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/21975eaf0b00df47f987a9817fc2e79a.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b08_v2.mp4" "out/videos/candidates/B_b08_v2_female.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/ae97088b-98d4-405d-a63a-12cf981df6bd_1930891_invisible.mp4" "" "out/videos/targets/03_B02-C10.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/e8887ae92de34679a13c15615b8fd30f.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a06_v1.mp4" "out/videos/candidates/A_a06_v1_female.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/16df43829cabfee32c3c15a46abc4a4b.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a06_v2.mp4" "out/videos/candidates/A_a06_v2_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/fe3d92036238c73d3468ba6740123c3d.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b02_v1.mp4" "out/videos/candidates/B_b02_v1_female.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/57fb11fe06ab3043f0a9d57c7ac903f4.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b02_v2.mp4" "out/videos/candidates/B_b02_v2_male.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/64e3e668-c19a-430d-b6e4-26752393a937_1930923_invisible.mp4" "" "out/videos/targets/04_B06-C04.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/cceed23c7992a6faf32017350efb18df.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b06_v1.mp4" "out/videos/candidates/B_b06_v1_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/39612140cfb6f14dc81b22d89a342e4a.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b06_v2.mp4" "out/videos/candidates/B_b06_v2_female.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/e520a4d5-f25d-480f-aea3-35fbb6fea9e8_1930964_invisible.mp4" "" "out/videos/targets/05_B05-C10.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/030e2faf2fadf5cc5b9c57525f4aa25a.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b05_v1.mp4" "out/videos/candidates/B_b05_v1_female.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/9bf8f073770968ea243391ca43ca74bd.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b05_v2.mp4" "out/videos/candidates/B_b05_v2_male.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/5624aaaf-dec9-460c-8adb-436852ef1832_1931100_invisible.mp4" "" "out/videos/targets/06_B05-C05.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/fccc24a7e42d6de41284c717054ffc96.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a04_v1.mp4" "out/videos/candidates/A_a04_v1_female.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/a1a6831421d14e436d3cdef248c36fe9.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a04_v2.mp4" "out/videos/candidates/A_a04_v2_male.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/6110e9d9-501f-446b-87ae-6203db8203ae_1931061_invisible.mp4" "" "out/videos/targets/07_B05-C05.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/b018d9ca-e8c7-49a4-9b6f-f6bbae3571eb_1931081_invisible.mp4" "" "out/videos/targets/08_B08-C08.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/b07f312a70bee08d5bd1dc341d696e8e.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a10_v1.mp4" "out/videos/candidates/A_a10_v1_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/25b1e54b159b89e052600646efa0108a.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a10_v2.mp4" "out/videos/candidates/A_a10_v2_female.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112113/df40cbb4-d1fd-4a8e-935c-934787e1d71d_1931088_invisible.mp4" "" "out/videos/targets/09_B10-C06.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/8a1783296cf0aed7fd842c21f7e6843e.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b10_v1.mp4" "out/videos/candidates/B_b10_v1_male.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/3a76efc4250fecab1e4e6871db32644a.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b10_v2.mp4" "out/videos/candidates/B_b10_v2_female.mov" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/f90cce08-7eb4-4b46-a4c0-f931c9dc7686_1931151_invisible.mp4" "" "out/videos/targets/10_B02-C03.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/1f226ba4-72e2-47bb-991e-83a032f8f6f9_1931169_invisible.mp4" "" "out/videos/targets/11_B01-C02.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/fe039bff9a2e78788e9a622c636bfe81.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b01_v1.mp4" "out/videos/candidates/B_b01_v1_male.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/2ab725d9712334b8b73ab8f167498e69.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/b/b01_v2.mp4" "out/videos/candidates/B_b01_v2_female.mov" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/bc876a74-9855-4bb9-91c4-b4ad2c0f552e_1931215_invisible.mp4" "" "out/videos/targets/12_B10-C02.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/247b4ffd-dc2e-4ace-957f-810aa1fc1ac5_1931182_invisible.mp4" "" "out/videos/targets/13_B08-C04.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/ba87f0d7-b925-4065-8133-f1f0c4668c78_1931209_invisible.mp4" "" "out/videos/targets/14_B08-C10.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/f3fe7ac3-7bad-4c61-bcea-24f0e6f1022d_1931239_invisible.mp4" "" "out/videos/targets/15_B10-C07.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/ffb9e5d8-afb8-43b2-9760-3315b5fb7e6d_1931370_invisible.mp4" "" "out/videos/targets/16_B01-C07.mp4" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/5a92dc6d3f5db0ad8e96bba4c4906ce4.mov" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a02_v1.mp4" "out/videos/candidates/A_a02_v1_male.mov" || true
+dl2 "https://huibo-data.cdn.bcebos.com/upload/f3fdaa1d039e9b8e745acfa0b0f911ab.mp4" "https://bd-spu-img.bj.bcebos.com/wizstar/xmas_2026/v1/a/a02_v2.mp4" "out/videos/candidates/A_a02_v2_female.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/cdda6827-2c90-4046-bf6d-cd79aa89c5d8_1931412_invisible.mp4" "" "out/videos/targets/17_B07-C10.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/b37d273c-ff6d-49dd-956f-caeb331b0110_1931334_invisible.mp4" "" "out/videos/targets/18_B10-C10.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/e90510df-b640-4cb1-a5cf-ab873a3845cb_1931365_invisible.mp4" "" "out/videos/targets/19_B10-C05.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/8725f513-1920-4eff-a5c9-fa07dfcfd6e7_1931385_invisible.mp4" "" "out/videos/targets/20_B10-C03.mp4" || true
+dl2 "https://dkd1gl5cnghzf.cloudfront.net/wizstar_watermark/2026112114/c91e8ace-41a1-4731-80fb-c3fbacbafa20_1931440_invisible.mp4" "" "out/videos/targets/21_B10-C04.mp4" || true
+echo "RESULT ok=$ok fail=$fail"
