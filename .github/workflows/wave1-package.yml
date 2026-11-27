@@ -1,0 +1,53 @@
+name: wave1-package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build package
+        run: python3 wave1/build.py 2>&1 | tee wave1_build.log
+
+      - name: Show summary
+        if: always()
+        run: |
+          cat wave1/out/build_summary.txt 2>/dev/null || true
+          cat wave1/out/wave1_sha256.txt 2>/dev/null || true
+          du -sh wave1/out/*.zip 2>/dev/null || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wave1-logs
+          path: |
+            wave1/out/manifest.csv
+            wave1/out/missing.csv
+            wave1/out/build_summary.txt
+            wave1/out/wave1_sha256.txt
+            wave1_build.log
+          if-no-files-found: ignore
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v3 \
+            --title "圣诞盲盒第一波 · 完整视频包" \
+            --notes "178 cases, 178 target videos, 40 shared candidates. Layout by model and gift group; see manifest.csv." || true
+          files=(wave1/out/wave1_part*.zip)
+          [ -e "${files[0]}" ] || unset files
+          gh release upload v3 \
+            "${files[@]}" \
+            wave1/out/manifest.csv \
+            wave1/out/missing.csv \
+            wave1/out/build_summary.txt \
+            wave1/out/wave1_sha256.txt \
+            --clobber
