@@ -1,0 +1,42 @@
+name: verify-v3
+on: workflow_dispatch
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Verify release assets
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, urllib.request, hashlib, zipfile
+          REPO="Renjie-hub-byte/xmas-blindbox-videos"; TAG="v3"
+          rel=json.load(urllib.request.urlopen(f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}"))
+          byname={a["name"]:a for a in rel["assets"]}
+          def get(a, path):
+              subprocess.run(["curl","-fSL","--retry","3","-H","Accept: application/octet-stream","-o",path,a["url"]],check=True)
+          get(byname["wave1_sha256.txt"], "expected.txt")
+          expected={line.split()[1]:line.split()[0] for line in open("expected.txt") if line.strip()}
+          log=[]
+          for name,want in sorted(expected.items()):
+              a=byname[name]; p=name
+              get(a,p)
+              size=os.path.getsize(p)
+              h=hashlib.sha256(open(p,'rb').read()).hexdigest()
+              with zipfile.ZipFile(p) as z:
+                  files=z.namelist()
+                  vids=[f for f in files if f.startswith("videos/") and f.endswith((".mp4",".mov"))]
+                  bad=z.testzip()
+              ok = h==want and size==a["size"]
+              log.append(f"{name}: size={size}/{a['size']} sha_ok={h==want} zip_ok={bad is None} videos={len(vids)}")
+              os.remove(p)
+          text="\n".join(log)
+          open("verify.txt","w").write(text+"\n")
+          print(text)
+          if not all("sha_ok=True" in l and "zip_ok=True" in l and "size=" in l and l.split("size=")[1].split("/")[0]==l.split("/")[1].split()[0] for l in log):
+              raise SystemExit("verification failed")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verify
+          path: verify.txt
