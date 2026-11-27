@@ -1,0 +1,22 @@
+name: fetch-targets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  targets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch targets
+        run: bash targets.sh 2>&1 | tee targets.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: targets
+          path: |
+            out/videos/targets
+            targets.log
