@@ -43,6 +43,7 @@ source/AMU：训练集-圣诞盲盒真实数据第二波.xlsx
 - `file`：压缩包内相对路径
 - `status`：`ok` / `missing_video_url` / `download_failed`
 - `part`：该文件在哪个分卷 zip 里
+- release 里另有 `wave2_manifest_enriched.csv`：把 `pick_c` 解析成 `gift_id`（Bxx-Cyy），并并入礼物大类、普通款/隐藏款、品牌英文名、A/B 场景中英文名
 
 用 Excel 的 A 列 `tpl_...` 或行号，都能在 `manifest.csv` 里查到对应视频文件。
 
