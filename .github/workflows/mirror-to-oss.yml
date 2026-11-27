@@ -20,9 +20,8 @@ jobs:
         run: |
           curl -fsSL -o ossutil.zip https://gosspublic.alicdn.com/ossutil/v2/2.3.0/ossutil-2.3.0-linux-amd64.zip
           unzip -q ossutil.zip
-          chmod +x ossutil-2.3.0-linux-amd64
-          sudo mv ossutil-2.3.0-linux-amd64 /usr/local/bin/ossutil
-          ossutil version
+          sudo install -m 755 ossutil-2.3.0-linux-amd64/ossutil /usr/local/bin/ossutil
+          /usr/local/bin/ossutil version
 
       - name: Pull release assets
         env:
