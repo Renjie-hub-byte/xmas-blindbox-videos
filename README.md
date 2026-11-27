@@ -12,9 +12,26 @@
 
 ## 下载
 
+海外直链：
+
 ```bash
 curl -L -o xmas-blindbox-videos.zip \
   https://github.com/Renjie-hub-byte/xmas-blindbox-videos/releases/download/v1/xmas-blindbox-videos.zip
+```
+
+国内网络（GitHub API，AI 可直接拉取）：
+
+```bash
+curl -L -H "Accept: application/octet-stream" \
+  -o xmas-blindbox-videos.zip \
+  https://api.github.com/repos/Renjie-hub-byte/xmas-blindbox-videos/releases/assets/800744069
+```
+
+校验：
+
+```bash
+shasum -a 256 xmas-blindbox-videos.zip
+# ac02050ccddfe1bfaea084227753c751839a3d0b4568e38670efd09413ae8b75
 ```
 
 解压后目录结构：
