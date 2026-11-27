@@ -1,0 +1,37 @@
+name: download-and-package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download videos
+        run: bash download.sh 2>&1 | tee download.log
+
+      - name: Package
+        run: |
+          cp manifest.csv videos.csv out/
+          cd out
+          zip -r -q ../xmas-blindbox-videos.zip videos manifest.csv videos.csv
+          cd ..
+          sha256sum xmas-blindbox-videos.zip | tee xmas-blindbox-videos.zip.sha256
+          du -sh xmas-blindbox-videos.zip
+          find out/videos -type f | wc -l
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v1 \
+            --title "圣诞盲盒标注视频包" \
+            --notes "22 cases / 50 unique videos. See manifest.csv." \
+            xmas-blindbox-videos.zip xmas-blindbox-videos.zip.sha256 \
+            --clobber || gh release upload v1 xmas-blindbox-videos.zip xmas-blindbox-videos.zip.sha256 --clobber
