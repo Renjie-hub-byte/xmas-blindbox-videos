@@ -1,0 +1,101 @@
+﻿gift_id,category,gift_type,brand_en,image_url
+B01-C01,车,普通款,Azure Apex Huracan,https://huibo-data.cdn.bcebos.com/upload/6e0f73da841026c017ec1a35f2a5ab14.jpg
+B01-C02,车,普通款,Ivory Vortex Chiron,https://huibo-data.cdn.bcebos.com/upload/afd2e0b88ecb0ecc0ddb61233acf08c5.jpg
+B01-C03,车,普通款,Santa Blizzard Huracan,https://huibo-data.cdn.bcebos.com/upload/767fd4d34940e9dc3b40ab1a8b2e50ec.jpg
+B01-C04,车,普通款,Arctic Phantom Corvette,https://huibo-data.cdn.bcebos.com/upload/59a09783229269a370b5e6c899165fea.jpg
+B01-C05,车,普通款,Mint Rush Porsche,https://huibo-data.cdn.bcebos.com/upload/5208d0f00b6123bf7e8215ff47978557.jpg
+B01-C06,车,隐藏款,Giftwrap Blizzard M4,https://huibo-data.cdn.bcebos.com/upload/562452b8cc4fc74073abe1d493ffd176.jpg
+B01-C07,车,普通款,Candy Cane 911,https://huibo-data.cdn.bcebos.com/upload/54df744aba0ce666154c80ba5b208e71.jpg
+B01-C08,车,普通款,Pink Plush Wrangler,https://huibo-data.cdn.bcebos.com/upload/493a92efa1c76e8d13f106be8b7111cb.jpg
+B01-C09,车,普通款,Crimson Pulse Aperta,https://huibo-data.cdn.bcebos.com/upload/39830ae5d7adf2ceadd076e7074d0121.jpg
+B01-C10,车,隐藏款,Midnight Phantom Crown,https://huibo-data.cdn.bcebos.com/upload/de32295da66a664dd75c494b1e45b9ec.jpg
+B02-C01,游艇,普通款,Pink Champagne Yacht,https://huibo-data.cdn.bcebos.com/upload/629ffefb3cb7acf42e6cf9325cdbc8fd.jpg
+B02-C02,游艇,隐藏款,Diamond Radiance Yacht,https://huibo-data.cdn.bcebos.com/upload/6c40ebf771ae470f83313b9762e81364.jpg
+B02-C03,游艇,普通款,White Wave Yacht,https://huibo-data.cdn.bcebos.com/upload/fb6024564da57de22462dabcbd60aacc.jpg
+B02-C04,游艇,普通款,Rose Royale Yacht,https://huibo-data.cdn.bcebos.com/upload/0a70a4bf220dc642fb3f7d1390f6da60.jpg
+B02-C05,游艇,普通款,Golden Mirage Yacht,https://huibo-data.cdn.bcebos.com/upload/548862784b6c293d22b8377491534869.jpg
+B02-C06,游艇,普通款,Ocean Halo Yacht,https://huibo-data.cdn.bcebos.com/upload/8e8a0af08bc227fdcc07d87d38e147a7.jpg
+B02-C07,游艇,隐藏款,Gilded Wild Yacht,https://huibo-data.cdn.bcebos.com/upload/0e4ac465db712bd7866d51f8537017cd.jpg
+B02-C08,游艇,普通款,Pearl Majesty Yacht,https://huibo-data.cdn.bcebos.com/upload/8b02876e454d6e65ce2f5057a985cf73.jpg
+B02-C09,游艇,普通款,Emerald Velocity Yacht,https://huibo-data.cdn.bcebos.com/upload/80816529930cabd98d787b98ad4cf853.jpg
+B02-C10,游艇,普通款,Crystal Horizon Yacht,https://huibo-data.cdn.bcebos.com/upload/b9d5996eb2bf49cf6f129a1abbb18cf6.jpg
+B03-C01,豪宅,普通款,Cliff Horizon Villa,https://huibo-data.cdn.bcebos.com/upload/9114aff05eae91ae326823ea2f45019a.jpg
+B03-C02,豪宅,普通款,Waterfall Meadow Villa,https://huibo-data.cdn.bcebos.com/upload/4c911ef65538efa4e4609046b420cac0.jpg
+B03-C03,豪宅,普通款,Azure Crescent Mosque,https://huibo-data.cdn.bcebos.com/upload/0e87e00a72127dacf74a5fadcca7560c.jpg
+B03-C04,豪宅,隐藏款,Winter Palace Arbor,https://huibo-data.cdn.bcebos.com/upload/4273887de0ddcd3b1e7c35a361f4c303.jpg
+B03-C05,豪宅,普通款,Midnight Terrace Villa,https://huibo-data.cdn.bcebos.com/upload/948411d879f4ed64a79f386554df92db.jpg
+B03-C06,豪宅,普通款,Obsidian Cliff Retreat,https://huibo-data.cdn.bcebos.com/upload/762f0b6c7108640cf3cf263397add65a.jpg
+B03-C07,豪宅,普通款,Azure Ring Villa,https://huibo-data.cdn.bcebos.com/upload/6af4c6b4c6a4bb34a70ec1ad3e7840d7.jpg
+B03-C08,豪宅,隐藏款,Ivory Grand Estate,https://huibo-data.cdn.bcebos.com/upload/5c74e981221b43ef6b5081e3d364d1dd.jpg
+B03-C09,豪宅,普通款,Nocturne Glass Estate,https://huibo-data.cdn.bcebos.com/upload/2a458f583efc381bd617e368097bfae4.jpg
+B03-C10,豪宅,普通款,Coastal Sky Villa,https://huibo-data.cdn.bcebos.com/upload/246a08ad98a943279dca82d90556d3a8.jpg
+B04-C01,包包,普通款,CHANEL Diamond Forever,https://huibo-data.cdn.bcebos.com/upload/ed875a8d5dc37ad958589a67c6906483.jpg
+B04-C02,包包,普通款,LV Capucines,https://huibo-data.cdn.bcebos.com/upload/c40a97b2c9bdc152ddb785bd7d396f8f.jpg
+B04-C03,包包,隐藏款,Hermès Himalaya Birkin,https://huibo-data.cdn.bcebos.com/upload/adcfc1fcf67f0bbc914b52fcba79db7e.jpg
+B04-C04,包包,普通款,Hermès Rose Sakura Birkin,https://huibo-data.cdn.bcebos.com/upload/fa84927de6ecf00a645a6246eb90a933.jpg
+B04-C05,包包,普通款,CHANEL Classic Flap,https://huibo-data.cdn.bcebos.com/upload/da5cd1ec3258a61d921f1a201fa05bf3.jpg
+B04-C06,包包,普通款,Gucci GG Marmont,https://huibo-data.cdn.bcebos.com/upload/776556cea89eeaca42ec8187a17417d2.jpg
+B04-C07,包包,普通款,Hermès Himalaya Kelly,https://huibo-data.cdn.bcebos.com/upload/cb59a86d9e3cd58951a9be0f3917eebd.jpg
+B04-C08,包包,普通款,Black Lady Dior,https://huibo-data.cdn.bcebos.com/upload/e43fa3f277ae6d916bed36f373b2bca1.jpg
+B04-C09,包包,隐藏款,Himalaya Lady Dior,https://huibo-data.cdn.bcebos.com/upload/49e10a3d213d5f8c7df981f8e0f442f5.jpg
+B04-C10,包包,普通款,LV Petite Malle,https://huibo-data.cdn.bcebos.com/upload/9833f65766ceae5cf3051f63e67b7f14.jpg
+B05-C01,吉他,普通款,Gilmour Black Strat,https://huibo-data.cdn.bcebos.com/upload/5eefefa4d48441562a0b9a4ee7c5a4d3.jpg
+B05-C02,吉他,隐藏款,ESP Exhibition Ltd,https://huibo-data.cdn.bcebos.com/upload/f7bdc196791df6ba0bd01bcdf6f7a169.png
+B05-C03,吉他,普通款,Jerry Garcia Tiger,https://huibo-data.cdn.bcebos.com/upload/8c12f54b5510835aa5e50a04ba11f6b3.png
+B05-C04,吉他,普通款,Cobain Fender Mustang,https://huibo-data.cdn.bcebos.com/upload/37be57850ccd98aec98ca8d622706d15.png
+B05-C05,吉他,普通款,Martin D-45,https://huibo-data.cdn.bcebos.com/upload/8c9fa47e6cc2e80d8f09b08a4b4b8978.jpg
+B05-C06,吉他,普通款,Gretsch White Falcon,https://huibo-data.cdn.bcebos.com/upload/3fb655c2675ce1d242b0c5495fcb9632.jpg
+B05-C07,吉他,普通款,Gibson SJ-200,https://huibo-data.cdn.bcebos.com/upload/519291c06ae0d304cc0cfc434456cff2.jpg
+B05-C08,吉他,普通款,D'Angelico New Yorker,https://huibo-data.cdn.bcebos.com/upload/4f48c183f2b5b10d41f580f78ef5ad1e.jpg
+B05-C09,吉他,普通款,Gibson CS Les Paul Custom,https://huibo-data.cdn.bcebos.com/upload/de6c2364f327a9467ed2a2c57016ce87.png
+B05-C10,吉他,隐藏款,PRS Private Stock,https://huibo-data.cdn.bcebos.com/upload/ff16536d11a6b72260084342b6d0a11c.png
+B06-C01,手表,隐藏款,Patek Philippe,https://huibo-data.cdn.bcebos.com/upload/c711c1e143cb6b387ae3b1ab2f518577.jpg
+B06-C02,手表,普通款,Vacheron Constantin,https://huibo-data.cdn.bcebos.com/upload/903e7422f9f604b0cdb487af30d8bf30.png
+B06-C03,手表,普通款,Blancpain,https://huibo-data.cdn.bcebos.com/upload/8e376bbea79901f3e57901b16538c03d.png
+B06-C04,手表,普通款,Richard Mille,https://huibo-data.cdn.bcebos.com/upload/29056161ab09c4e14c33ed24b21c890e.jpg
+B06-C05,手表,普通款,Voutilainen,https://huibo-data.cdn.bcebos.com/upload/0d10bb9e8fae4488ae1ad47e0a7eaa7f.png
+B06-C06,手表,普通款,Chanel,https://huibo-data.cdn.bcebos.com/upload/8679c5444a80097989e8eff056fa125a.jpg
+B06-C07,手表,普通款,Dior,https://huibo-data.cdn.bcebos.com/upload/f86eb52adf6e25f32875a156da502069.png
+B06-C08,手表,普通款,LV,https://huibo-data.cdn.bcebos.com/upload/3b292a0064e56a20b67da9e9def4fba3.jpg
+B06-C09,手表,隐藏款,Rolex,https://huibo-data.cdn.bcebos.com/upload/cae8a0fe8177cfbc8ee3b86771fd553c.jpg
+B06-C10,手表,普通款,Greubel Forsey,https://huibo-data.cdn.bcebos.com/upload/46ed0daa4d3766fada89e158e637a201.jpg
+B07-C01,旅行地,普通款,"Le Morne, Mauritius",https://huibo-data.cdn.bcebos.com/upload/15d51856ca7d0288b39e92d49b00614b.jpg
+B07-C02,旅行地,普通款,Canyon View,https://huibo-data.cdn.bcebos.com/upload/73070f8fc9e1bca5a4d1983f68beaeb6.jpg
+B07-C03,旅行地,普通款,"Shibuya, Tokyo",https://huibo-data.cdn.bcebos.com/upload/68d819dc2a1dcf78d47fe2c49131c7e8.jpg
+B07-C04,旅行地,普通款,Flaming Mtns,https://huibo-data.cdn.bcebos.com/upload/5bdf99f300a633cdfea2918d6d89dde7.jpg
+B07-C05,旅行地,普通款,Glacial Canyon,https://huibo-data.cdn.bcebos.com/upload/d468470a95c38260949bcc2e3b41037c.jpg
+B07-C06,旅行地,普通款,Rainforest,https://huibo-data.cdn.bcebos.com/upload/759d541f1645b159490cd0dce2cf40f8.jpg
+B07-C07,旅行地,隐藏款,Island Castle,https://huibo-data.cdn.bcebos.com/upload/cdf7214ca54e377bc9c6dfed2a31d209.jpg
+B07-C08,旅行地,普通款,Desert Oasis,https://huibo-data.cdn.bcebos.com/upload/7e164cc51de1f4a2a23982a715b1bbfe.jpg
+B07-C09,旅行地,普通款,Sakura Forest,https://huibo-data.cdn.bcebos.com/upload/4da7417e3acb234ffb8ab8045061aded.jpg
+B07-C10,旅行地,隐藏款,Glacier Canyon,https://huibo-data.cdn.bcebos.com/upload/9fd1662588a0868b6df6d0baf6f40c01.jpg
+B08-C01,雪服,隐藏款,Hermès Ski Set,https://huibo-data.cdn.bcebos.com/upload/c5bc35819bcabeac20d6ddbd08a95d1a.png
+B08-C02,雪服,普通款,Ice Blue Faux-Fur Ski,https://huibo-data.cdn.bcebos.com/upload/c4963feedb07027afe6f3987d1622413.jpg
+B08-C03,雪服,普通款,Yellow-Gray Snowboard,https://huibo-data.cdn.bcebos.com/upload/414ad3c50446dd22ef636202aa2bbfd8.jpg
+B08-C04,雪服,普通款,Red-Black Anorak Ski,https://huibo-data.cdn.bcebos.com/upload/324d9f21757d5ab522006607122808bf.jpg
+B08-C05,雪服,普通款,Deep Purple Snowboard,https://huibo-data.cdn.bcebos.com/upload/097a128d577ffbf8097b55a9f02d7442.jpg
+B08-C06,雪服,普通款,Blue-Black Color-Block Ski,https://huibo-data.cdn.bcebos.com/upload/0d19ae143c9edc637ccb01b39747bc69.jpg
+B08-C07,雪服,隐藏款,Royal Blue Retro Ski,https://huibo-data.cdn.bcebos.com/upload/d18768b3baa1e1070e2c1f6037871b0e.jpg
+B08-C08,雪服,普通款,Gray Camo Bib Snowboard,https://huibo-data.cdn.bcebos.com/upload/9fd124c64ecb5a0f103a7a06e8097a8c.jpg
+B08-C09,雪服,普通款,Aqua Teal Anorak Ski,https://huibo-data.cdn.bcebos.com/upload/24e3e42fdeef553593d21254a0ef1ef4.jpg
+B08-C10,雪服,普通款,Black-White Color-Block Ski,https://huibo-data.cdn.bcebos.com/upload/0631e28d59d3897f00da3c95dfd5fbae.jpg
+B09-C01,私人飞机,普通款,Gulfstream G650ER,https://huibo-data.cdn.bcebos.com/upload/40bfd79f8a97b37f763322f3abd9dcf8.png
+B09-C02,私人飞机,普通款,Aetherion,https://huibo-data.cdn.bcebos.com/upload/760c20c5b9dee86cc59068e1a01f88c5.jpg
+B09-C03,私人飞机,普通款,Obsidian Wraith,https://huibo-data.cdn.bcebos.com/upload/9cd122d77901a0a18123562401480e9c.jpg
+B09-C04,私人飞机,普通款,HondaJet Elite II,https://huibo-data.cdn.bcebos.com/upload/55419abd0bcf8bb027b8eb1d02e23384.jpg
+B09-C05,私人飞机,隐藏款,Xmas Jet 01,https://huibo-data.cdn.bcebos.com/upload/7a0042d1d7808283ee24074b0ab6b990.jpg
+B09-C06,私人飞机,普通款,Cirrus Vision Jet SF50,https://huibo-data.cdn.bcebos.com/upload/ae39f9d60a8fc4c5224b32a13018b1cf.jpg
+B09-C07,私人飞机,普通款,HondaJet Elite II Black,https://huibo-data.cdn.bcebos.com/upload/f3de0d508de4ef4ce9e5962e04da0bac.jpg
+B09-C08,私人飞机,普通款,Piaggio Avanti,https://huibo-data.cdn.bcebos.com/upload/60676e4c278da829c75c362b680017ae.jpg
+B09-C09,私人飞机,普通款,Epic E1000 GX,https://huibo-data.cdn.bcebos.com/upload/182263dd28d3d20b422482a6ad87ff69.jpg
+B09-C10,私人飞机,隐藏款,Xmas Jet 02,https://huibo-data.cdn.bcebos.com/upload/a9fa2e61a11d647da9a4ea0a439e6b95.jpg
+B10-C01,音响,普通款,Focal Grande Utopia EM Evo,https://huibo-data.cdn.bcebos.com/upload/ce3867795b53918285208f6d23ec9e2b.jpg
+B10-C02,音响,隐藏款,Kharma Grand Enigma Veyron EV-1D,https://huibo-data.cdn.bcebos.com/upload/515bb6aa3f16999f32e36cc846dcaef2.png
+B10-C03,音响,普通款,YG Acoustics TITAN,https://huibo-data.cdn.bcebos.com/upload/fadd62d0f28f79c6c2519883d5064001.jpg
+B10-C04,音响,普通款,Cessaro Omega I,https://huibo-data.cdn.bcebos.com/upload/e9e5a09de972649b7bfb8f138190908d.png
+B10-C05,音响,普通款,Treble Clef Audio TCA-M – Silver,https://huibo-data.cdn.bcebos.com/upload/af99fba1f5d411e0ad4b0b5eedcb49b9.png
+B10-C06,音响,隐藏款,Treble Clef Audio TCA-M – Black,https://huibo-data.cdn.bcebos.com/upload/eb450fbcf88a5f08e2814baae2c6ad65.png
+B10-C07,音响,普通款,Estelon Forza,https://huibo-data.cdn.bcebos.com/upload/cf0c4af5d64b9ebfd71d181db277c0bf.png
+B10-C08,音响,普通款,Bang & Olufsen Beolab 90,https://huibo-data.cdn.bcebos.com/upload/83ed0bd0c624aadb3629c896310476a2.png
+B10-C09,音响,普通款,Marten Coltrane Supreme Extreme,https://huibo-data.cdn.bcebos.com/upload/b35cf95d1f97c3e6c9241dcd4657bdad.png
+B10-C10,音响,普通款,Magico M9,https://huibo-data.cdn.bcebos.com/upload/c11a358b58fe7f7d8303660950179a14.png
