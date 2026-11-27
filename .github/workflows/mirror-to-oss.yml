@@ -1,0 +1,57 @@
+name: mirror-to-oss
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_prefix:
+        description: "OSS prefix under oss://tianjiu-cockpit/"
+        required: true
+        default: "xmas-blindbox"
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Install ossutil
+        run: |
+          curl -fsSL -o ossutil.zip https://gosspublic.alicdn.com/ossutil/v2/2.3.0/ossutil-2.3.0-linux-amd64.zip
+          unzip -q ossutil.zip
+          chmod +x ossutil-2.3.0-linux-amd64
+          sudo mv ossutil-2.3.0-linux-amd64 /usr/local/bin/ossutil
+          ossutil version
+
+      - name: Pull release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p dl/wave1 dl/wave2
+          gh release download v3 -R "$GITHUB_REPOSITORY" -D dl/wave1 -p 'wave1_part*.zip' -p 'wave1_sha256.txt' -p 'wave1_manifest_enriched.csv' -p 'manifest.csv' -p 'missing.csv'
+          gh release download v2 -R "$GITHUB_REPOSITORY" -D dl/wave2 -p 'wave2_part*.zip' -p 'wave2_sha256.txt' -p 'wave2_manifest_enriched.csv' -p 'manifest.csv' -p 'missing.csv'
+          gh release download v3 -R "$GITHUB_REPOSITORY" -D dl/catalog -p 'gifts.csv' -p 'scenes.csv'
+          du -sh dl/*
+
+      - name: Verify checksums
+        run: |
+          cd dl/wave1 && sha256sum -c wave1_sha256.txt
+          cd ../wave2 && sha256sum -c wave2_sha256.txt
+
+      - name: Upload to OSS
+        env:
+          AK: ${{ secrets.ALIYUN_OSS_AK }}
+          SK: ${{ secrets.ALIYUN_OSS_SK }}
+        run: |
+          P="oss://tianjiu-cockpit/${{ inputs.target_prefix }}"
+          ossutil cp -r dl/wave1 "$P/wave1/" --access-key-id "$AK" --access-key-secret "$SK" -e oss-cn-hangzhou.aliyuncs.com --region cn-hangzhou -f
+          ossutil cp -r dl/wave2 "$P/wave2/" --access-key-id "$AK" --access-key-secret "$SK" -e oss-cn-hangzhou.aliyuncs.com --region cn-hangzhou -f
+          ossutil cp -r dl/catalog "$P/" --access-key-id "$AK" --access-key-secret "$SK" -e oss-cn-hangzhou.aliyuncs.com --region cn-hangzhou -f
+
+      - name: List result
+        env:
+          AK: ${{ secrets.ALIYUN_OSS_AK }}
+          SK: ${{ secrets.ALIYUN_OSS_SK }}
+        run: |
+          ossutil ls "oss://tianjiu-cockpit/${{ inputs.target_prefix }}/" -s --access-key-id "$AK" --access-key-secret "$SK" -e oss-cn-hangzhou.aliyuncs.com --region cn-hangzhou | tail -20
