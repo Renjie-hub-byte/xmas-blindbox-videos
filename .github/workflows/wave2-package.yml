@@ -1,0 +1,53 @@
+name: wave2-package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build package
+        run: python3 wave2/build.py 2>&1 | tee wave2_build.log
+
+      - name: Show summary
+        if: always()
+        run: |
+          cat wave2/out/build_summary.txt 2>/dev/null || true
+          cat wave2/out/wave2_sha256.txt 2>/dev/null || true
+          du -sh wave2/out/*.zip 2>/dev/null || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wave2-logs
+          path: |
+            wave2/out/manifest.csv
+            wave2/out/missing.csv
+            wave2/out/build_summary.txt
+            wave2/out/wave2_sha256.txt
+            wave2_build.log
+          if-no-files-found: ignore
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v2 \
+            --title "圣诞盲盒第二波 · 训练集视频包" \
+            --notes "430 Excel rows, 407 videos downloaded, 23 missing (see missing.csv). Grouped by model and internal/external; see manifest.csv." || true
+          files=(wave2/out/wave2_part*.zip)
+          [ -e "${files[0]}" ] || unset files
+          gh release upload v2 \
+            "${files[@]}" \
+            wave2/out/manifest.csv \
+            wave2/out/missing.csv \
+            wave2/out/build_summary.txt \
+            wave2/out/wave2_sha256.txt \
+            --clobber
