@@ -50,6 +50,17 @@ source/AMU：训练集-圣诞盲盒真实数据第二波.xlsx
 
 GitHub 单个 release 文件上限 2GB，所以视频按累计大小切成多个 `wave2_partNN.zip`（每个约 1.3GB）。全部解压到同一目录即可合并成上面的结构。
 
+一条命令（不需要 gh）：
+
+```bash
+curl -sL -H "Accept: application/vnd.github.raw" \
+  https://api.github.com/repos/Renjie-hub-byte/xmas-blindbox-videos/contents/wave2/fetch.py \
+  | python3 -
+cd wave2 && for z in wave2_part*.zip; do unzip -o "$z"; done
+```
+
+或已安装 gh：
+
 ```bash
 gh release download v2 -R Renjie-hub-byte/xmas-blindbox-videos -D wave2 -p 'wave2_part*.zip'
 cd wave2 && for z in wave2_part*.zip; do unzip -o "$z"; done
