@@ -9,7 +9,22 @@
 
 覆盖：两波合起来用到了礼物目录里全部 **100 个盲盒**（第一波 82 个，第二波 99 个，重叠 81 个）。
 
-## 一条命令拉取
+## 国内直链（推荐，实测 25 MB/s）
+
+阿里云 OSS 公开读，前缀 `xmas-blindbox/`，总览页：
+<https://tianjiu-cockpit.oss-cn-hangzhou.aliyuncs.com/xmas-blindbox/index.html>
+
+```bash
+BASE=https://tianjiu-cockpit.oss-cn-hangzhou.aliyuncs.com/xmas-blindbox
+mkdir -p xmas && cd xmas
+for f in wave1/wave1_part01.zip wave1/wave1_part02.zip \
+         wave2/wave2_part01.zip wave2/wave2_part02.zip wave2/wave2_part03.zip; do
+  curl -L -C - -O "$BASE/$f" --create-dirs
+done
+for z in wave1/*.zip wave2/*.zip; do unzip -o "$z" -d "${z%%/*}"; done
+```
+
+## GitHub 备份（海外快、国内慢，实测 34 KB/s）
 
 第一波：
 
