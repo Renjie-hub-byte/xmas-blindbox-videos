@@ -32,6 +32,5 @@ jobs:
         run: |
           gh release create v1 \
             --title "圣诞盲盒标注视频包" \
-            --notes "22 cases / 50 unique videos. See manifest.csv." \
-            xmas-blindbox-videos.zip xmas-blindbox-videos.zip.sha256 \
-            --clobber || gh release upload v1 xmas-blindbox-videos.zip xmas-blindbox-videos.zip.sha256 --clobber
+            --notes "22 cases / 50 unique videos. See manifest.csv." || true
+          gh release upload v1 xmas-blindbox-videos.zip xmas-blindbox-videos.zip.sha256 --clobber
